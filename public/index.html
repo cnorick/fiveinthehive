@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Five in the Hive</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- update the version number as needed -->
+    <script defer src="/__/firebase/4.1.1/firebase-app.js"></script>
+    <!-- include only the Firebase features as you need -->
+    <script defer src="/__/firebase/4.1.1/firebase-auth.js"></script>
+    <script defer src="/__/firebase/4.1.1/firebase-database.js"></script>
+    <!--<script defer src="/__/firebase/4.1.1/firebase-messaging.js"></script>-->
+    <!--<script defer src="/__/firebase/4.1.1/firebase-storage.js"></script>-->
+    <!-- initialize the SDK after all desired features are loaded -->
+    <script defer src="/__/firebase/init.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.1.1/firebase.js"></script>
+    <script src="https://cdn.firebase.com/libs/firebaseui/2.0.0/firebaseui.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/2.0.0/firebaseui.css" />
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyCIr4glwK6bidV_9r8KJN7oz2ne92omK-0",
+            authDomain: "fiveinthehive-9ed3b.firebaseapp.com",
+            databaseURL: "https://fiveinthehive-9ed3b.firebaseio.com",
+            projectId: "fiveinthehive-9ed3b",
+            storageBucket: "fiveinthehive-9ed3b.appspot.com",
+            messagingSenderId: "732143796612"
+        };
+        firebase.initializeApp(config);
+        var uiConfig = {
+            signInSuccessUrl: 'home.html',
+            signInOptions: [
+                // Leave the lines as is for the providers you want to offer your users.
+                firebase.auth.EmailAuthProvider.PROVIDER_ID,
+                firebase.auth.GoogleAuthProvider.PROVIDER_ID,
+                firebase.auth.FacebookAuthProvider.PROVIDER_ID,
+                firebase.auth.TwitterAuthProvider.PROVIDER_ID
+            ],
+        };
+        // Initialize the FirebaseUI Widget using Firebase.
+        var ui = new firebaseui.auth.AuthUI(firebase.auth());
+        // The start method will wait until the DOM is loaded.
+        ui.start('#firebaseui-auth-container', uiConfig);
+    </script>
+</head>
+<body>
+<div id="firebaseui-auth-container" class="container">
+    <div class="text-center">
+        <h1>Five in the Hive</h1>
+    </div>
+</div>
+
+</body>
+</html>
